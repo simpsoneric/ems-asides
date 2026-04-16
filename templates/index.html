@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="home">
+  {{ section.content | safe }}
+
+  <section class="post-list-wrap">
+    <h2>Recent</h2>
+    {% set posts = get_section(path="posts/_index.md") %}
+    <ul class="post-list">
+      {% for post in posts.pages %}
+        <li>
+          <a href="{{ post.permalink }}">{{ post.title }}</a>
+          <time datetime="{{ post.date }}">{{ post.date | date(format='%Y-%m-%d') }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>
+{% endblock %}

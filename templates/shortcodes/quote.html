@@ -1,0 +1,9 @@
+{%- set parts = body | split(pat="---") -%}
+<figure class="bq">
+  <blockquote>
+    {{- parts[0] | trim | markdown | safe -}}
+  </blockquote>
+  {%- if parts | length > 1 %}
+  <figcaption>{{ parts[1] | trim | markdown(inline=true) | safe }}</figcaption>
+  {%- endif %}
+</figure>

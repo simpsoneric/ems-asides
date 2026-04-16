@@ -1,0 +1,21 @@
+base_url = "https://simpsoneric.github.io/ems-asides"
+title = "ems asides"
+description = ""
+default_language = "en"
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+taxonomies = [{ name = "tags", feed = true }]
+
+[markdown]
+smart_punctuation = true
+bottom_footnotes = true
+
+[markdown.highlighting]
+code = true
+theme = "solarized-light"
+
+[extra]
+author = "Eric M. Simpson"

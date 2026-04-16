@@ -1,0 +1,443 @@
+// ---- Tokens
+$serif:
+  "Source Serif 4", "Iowan Old Style", "Apple Garamond", "Baskerville", Georgia,
+  serif;
+$sans:
+  "Source Sans 3",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Helvetica Neue",
+  sans-serif;
+$mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+$ink: #1a1a1a;
+$paper: #fdfcf9;
+$muted: #6a6a6a;
+$accent: #8b2e2e;
+$rule: #d8d3c7;
+$panel: #f4efe4;
+
+$measure: 34rem; // body column
+$aside-width: 15rem; // margin note column
+$gutter: 2rem; // gap between body and asides
+
+// ---- Base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: $paper;
+  color: $ink;
+  font-family: $serif;
+  font-weight: 400;
+  font-feature-settings: "kern", "liga", "onum";
+  line-height: 1.55;
+}
+
+// ---- Chrome
+.site-header {
+  max-width: $measure;
+  margin: 3rem auto 4rem;
+  padding: 0 1.5rem;
+  font-family: $sans;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-title {
+  color: $ink;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom-color: $ink;
+  }
+}
+
+.site-footer {
+  max-width: $measure;
+  margin: 6rem auto 3rem;
+  padding: 2rem 1.5rem 0;
+  border-top: 1px solid $rule;
+  font-family: $sans;
+  font-size: 0.8rem;
+  color: $muted;
+}
+
+main {
+  min-height: 60vh;
+}
+
+// ---- Home / Section
+.home,
+.section {
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-family: $sans;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $muted;
+    margin-top: 3rem;
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted $rule;
+  }
+  a {
+    color: $ink;
+    text-decoration: none;
+    font-size: 1.05rem;
+    &:hover {
+      color: $accent;
+    }
+  }
+  time {
+    font-family: $sans;
+    font-size: 0.8rem;
+    color: $muted;
+    white-space: nowrap;
+  }
+}
+
+// ---- Post
+.post {
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.4rem;
+  }
+  .post-subtitle {
+    font-family: $serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    color: $muted;
+    margin: 0.25rem 0 1rem;
+    max-width: 28rem;
+  }
+  time {
+    font-family: $sans;
+    font-size: 0.75rem;
+    color: $muted;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+.post-body {
+  // Ventilated prose: preserve source-line breaks, still word-wrap long lines.
+  p,
+  li,
+  blockquote {
+    white-space: pre-line;
+  }
+
+  p {
+    margin: 0 0 1em;
+    hyphens: auto;
+  }
+
+  h2,
+  h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 2.5em 0 0.5em;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($accent, 0.35);
+    &:hover {
+      border-bottom-color: $accent;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25em;
+    margin: 1em 0;
+  }
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  // Plain-text indent block: matches bullet-list text start, no markers.
+  .indent {
+    padding-left: 0.75em;
+    margin: 1em 0;
+  }
+
+  blockquote {
+    margin: 1.5em 0;
+    padding-left: 1.25em;
+    border-left: 2px solid $rule;
+    color: $muted;
+    font-style: italic;
+  }
+
+  code {
+    font-family: $mono;
+    font-size: 0.88em;
+    background: rgba($ink, 0.05);
+    padding: 0.08em 0.3em;
+    border-radius: 3px;
+  }
+
+  pre {
+    font-family: $mono;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: $panel;
+    padding: 1em 1.25em;
+    border-radius: 4px;
+    overflow-x: auto;
+
+    code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-style: italic;
+  }
+}
+
+.post-tags {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid $rule;
+  font-family: $sans;
+  font-size: 0.8rem;
+
+  a {
+    color: $muted;
+    text-decoration: none;
+    margin-right: 0.75em;
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+// ---- Footnotes zone: sans-serif voice + visual container
+.footnotes {
+  font-family: $sans;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: $ink;
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  background: rgba($ink, 0.02);
+  border-top: 3px solid $rule;
+
+  h2 {
+    font-family: $sans;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $muted;
+    margin: 0 0 2rem;
+  }
+
+  p {
+    white-space: pre-line;
+    margin: 0 0 0.75em;
+  }
+
+  blockquote {
+    white-space: pre-line;
+    margin: 1.25em 0;
+    padding-left: 1.25em;
+    border-left: 2px solid $rule;
+    color: $muted;
+    font-style: italic;
+    font-size: inherit;
+  }
+
+  .bq blockquote {
+    white-space: normal;
+    border-left: none;
+    color: $ink;
+    padding: 0.75em 0 0 2em;
+    font-style: italic;
+    font-size: 0.88em;
+  }
+  .bq blockquote p { white-space: pre-line; }
+
+  .fn-anchor {
+    font-size: 0.8rem;
+  }
+}
+
+// ---- Attributed quotes
+.bq {
+  margin: 2em 0;
+
+  blockquote {
+    margin: 0;
+    padding: 0.75em 0 0 2em;
+    border: none;
+    position: relative;
+    font-size: 1.05rem;
+    white-space: normal;
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      left: 0;
+      top: -0.15em;
+      font-size: 3rem;
+      font-family: $serif;
+      color: rgba($accent, 0.25);
+      line-height: 1;
+    }
+
+    p {
+      white-space: pre-line;
+      margin: 0 0 0.75em;
+    }
+    p:last-child { margin-bottom: 0; }
+  }
+
+  figcaption {
+    font-family: $sans;
+    font-size: 0.78rem;
+    color: $muted;
+    margin-top: 0;
+    padding-left: 2em;
+    font-style: normal;
+    &::before { content: "— "; }
+  }
+}
+
+// ---- Footnote references
+.fn-ref {
+  font-family: $sans;
+  font-size: 0.7em;
+  line-height: 0;
+  vertical-align: super;
+  a {
+    color: $accent;
+    text-decoration: none;
+    padding: 0 0.1em;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.fn-anchor {
+  font-family: $sans;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.25em;
+  a {
+    color: $accent;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// ---- Asides: narrow screens render inline as a soft callout
+.margin-note {
+  font-family: $sans;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: $muted;
+  margin: 1.25em 0;
+  padding: 0.75em 1em;
+  background: rgba($accent, 0.04);
+  border-left: 2px solid rgba($accent, 0.35);
+
+  p,
+  li {
+    white-space: pre-line;
+  }
+  p {
+    margin: 0 0 0.5em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    font-size: 0.85em;
+  }
+}
+
+// ---- Asides: wide screens float into the right margin
+@media (min-width: 62rem) {
+  .post {
+    max-width: $measure + $aside-width + $gutter;
+    // Reserve the right margin; body text still measures ~$measure
+    padding-right: $aside-width + $gutter + 1.5rem;
+  }
+  .post-header,
+  .post-tags {
+    max-width: $measure;
+  }
+  .margin-note {
+    float: right;
+    clear: right;
+    width: $aside-width;
+    margin-right: -($aside-width + $gutter);
+    margin-top: 0.35em;
+    margin-bottom: 0.5em;
+    padding: 0.25em 0 0.5em;
+    background: transparent;
+    border-left: none;
+    border-top: 1px solid $rule;
+    font-size: 0.82rem;
+  }
+}
