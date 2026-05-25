@@ -10,6 +10,11 @@
     {% endif %}
     <time datetime="{{ page.date }}">{{ page.date | date(format='%B %-d, %Y') }}</time>
   </header>
+  <div class="reading-mode-toggle" role="group" aria-label="Reading mode">
+    <span class="reading-mode-label">Reading:</span>
+    <button type="button" data-mode="ventilated" aria-pressed="true">Ventilated</button>
+    <button type="button" data-mode="flowing" aria-pressed="false">Flowing</button>
+  </div>
   <div class="post-body">
     {{ page.content | safe }}
   </div>
