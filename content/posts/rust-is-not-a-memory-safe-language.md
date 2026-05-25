@@ -17,7 +17,7 @@ Putting the Rust language in the same category as them is illogical to me.
 
 {% aside() %}
 [rust is a niche language](@/posts/rust-settled-foundations-freed-minds.md),
-in 20206, almost everyone programs in other languages
+in 2026, almost everyone programs in other languages
 {% end %}
 
 "Memory safety" gets the tagline,
