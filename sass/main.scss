@@ -99,6 +99,19 @@ main {
   }
 }
 
+// ---- Home intro: italic muted serif lede (matches .post-subtitle voice)
+.home > p {
+  font-family: $serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $muted;
+  max-width: 28rem;
+  white-space: pre-line;
+  margin: 0 0 1em;
+}
+
 .post-list {
   list-style: none;
   padding: 0;
@@ -315,7 +328,9 @@ main {
     font-style: italic;
     font-size: 0.88em;
   }
-  .bq blockquote p { white-space: pre-line; }
+  .bq blockquote p {
+    white-space: pre-line;
+  }
 
   .fn-anchor {
     font-size: 0.8rem;
@@ -349,7 +364,9 @@ main {
       white-space: pre-line;
       margin: 0 0 0.75em;
     }
-    p:last-child { margin-bottom: 0; }
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   figcaption {
@@ -359,7 +376,9 @@ main {
     margin-top: 0;
     padding-left: 2em;
     font-style: normal;
-    &::before { content: "— "; }
+    &::before {
+      content: "— ";
+    }
   }
 }
 
@@ -373,7 +392,9 @@ main {
     color: $accent;
     text-decoration: none;
     padding: 0 0.1em;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -385,7 +406,9 @@ main {
   a {
     color: $accent;
     text-decoration: none;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
