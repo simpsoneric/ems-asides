@@ -15,8 +15,13 @@ as Java, Python, Go, and JavaScript.
 
 Putting the Rust language in the same category as them is illogical to me.
 
+{% aside() %}
+[rust is a niche language](@/posts/rust-settled-foundations-freed-minds.md),
+in 20206, almost everyone programs in other languages
+{% end %}
+
 "Memory safety" gets the tagline,
-because it's easiest to explain to C++ engineers.
+because it's easiest to explain to C++ engineers.{{ fnref(id="tiobe", n="1") }}
 
 But as a motivation to move from C++ to Python?
 That makes no sense.
@@ -64,9 +69,13 @@ Efficient:
 
 {% footnotes() %}
 
+## Footnotes
+
+{{ fn(id="tiobe", n="1") }} C and C++ together hold ~20% of language market share. Rust sits at ~1%. Source: [TIOBE Index](https://www.tiobe.com/tiobe-index/).
+
 ## aside
 
-The NSA's "Software Memory Safety" directive,
+The NSA's ["Software Memory Safety"](https://media.defense.gov/2025/Jun/23/2003742198/-1/-1/0/CSI_MEMORY_SAFE_LANGUAGES_REDUCING_VULNERABILITIES_IN_MODERN_SOFTWARE_DEVELOPMENT.PDF) directive,
 is a pragmatic step,
 and purposefully narrow in its scope.
 
@@ -79,9 +88,8 @@ That recommendation is correct.
 But framing Rust solely through this lens does it a disservice.
 
 The NSA acknowledged that,
-based on defect data from Google and Microsoft,
-that the argument
-_"careful C++ programmers can solve this"_
+based on defect data from [Microsoft](https://www.microsoft.com/en-us/msrc/blog/2019/07/a-proactive-approach-to-more-secure-code), [Chromium](https://www.chromium.org/Home/chromium-security/memory-safety/), and [Android](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html),
+the argument _"careful C++ programmers can solve this"_
 is definitively false.
 
 History shows that developer teams,
