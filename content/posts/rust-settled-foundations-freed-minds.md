@@ -23,21 +23,17 @@ My hot-take reason for this "I don't want to go back signal" is
 
 Rust appeals to developers who are okay giving up low-level choices:
 
-{% indent() %}
-to get one-way to do everything that isn't your actual problem,
-to get high-level cohesion,
-to get shared leverage instead of individual cleverness.{{ fnref(id="dijkstra", n="1") }}
-{% end %}
+- to get one-way to do everything that isn't your actual problem,
+- to get high-level cohesion,
+- to get shared leverage instead of individual cleverness.{{ fnref(id="dijkstra", n="1") }}
 
 This includes:
 
-{% indent() %}
-One way to build and package software: "cargo"
-One set of baseline patterns to express your ideas: "clippy"
-These patterns are formatted identically: "rust fmt"
-Patterns related to sharing data are settled: "the borrow checker"
-Patterns related to sharing behavior are settled: "rust traits"
-{% end %}
+- One way to build and package software: "cargo"
+- One set of baseline patterns to express your ideas: "clippy"
+- These patterns are formatted identically: "rust fmt"
+- Patterns related to sharing data are settled: "the borrow checker"
+- Patterns related to sharing behavior are settled: "rust traits"
 
 Rust is seen as a low-level language,
 but the reason it holds people is the opposite,
@@ -46,13 +42,13 @@ how to share resources, structure data, and compose behavior.
 
 These are settled, not open questions.
 
-These are not endlessly renegotiated
-&nbsp; &nbsp;...team-by-team, file-by-file, or engineer-by-engineer.
+These are not endlessly renegotiated;
+...team-by-team, file-by-file, or engineer-by-engineer.
 
 No mental overhead for every project, or pull-request.
-The computer keeps track of it.
-&nbsp; &nbsp; ...not your brain.
-&nbsp; &nbsp; ...not the project's maintainer.
+The computer keeps track of it;
+...not your brain.
+...not the project's maintainer.
 
 The real payoff is above the low-level.
 Rust's type system lets you express intent, not just implementation.

@@ -8,12 +8,12 @@ tags = ["programming-languages", "rust"]
 
 I find it counterproductive,
 and almost disparaging,
-when _memory-safe_ is used as **the** primary descriptor of Rust.
+when _memory-safe_ is used as the primary descriptor of Rust.
 
 It puts Rust in the same bucket
 as Java, Python, Go, and JavaScript.
 
-Putting the Rust language in the same category as them is illogical to me.
+Putting Rust in that category feels wrong to me.
 
 {% aside() %}
 [rust is a niche language](@/posts/rust-settled-foundations-freed-minds.md),
@@ -23,11 +23,13 @@ in 2026, almost everyone programs in other languages
 "Memory safety" gets the tagline,
 because it's easiest to explain to C++ engineers.{{ fnref(id="tiobe", n="1") }}
 
-But as a motivation to move from C++ to Python?
-That makes no sense.
+But if “memory safety” alone were the point,
+Python would already solve the problem.
+Rust matters because it offers something different.
 
 Rust feels like an entirely different class of memory-safe language.
-It is a language class that:
+
+One that:
 
 {% quote() %}
 empowers everyone
@@ -41,11 +43,19 @@ I dismissed it as standard, meaningless, marketing fluff.
 But as I wrote more software in the language,
 the importance of every word in that phrase became apparent.
 
-Empowers everyone:
+Empowers:
 
-- Rust removes barriers
-  previously reserved for systems programming wizards only,
-- lowers the barrier to entry by leveraging the compiler/tooling
+{% aside() %}
+I wrote a multi-threaded,
+raw-flash, file store in Rust.
+
+The language gave me confidence
+to implement this correctly.
+{% end %}
+
+- Rust democratizes systems programming
+- It encodes rules that experts usually carry in their heads
+- The language helps ordinary programmers apply those rules
 
 Productive:
 
@@ -62,10 +72,23 @@ Reliable:
 
 Efficient:
 
+{% aside() %}
+Rust efficiency is roughly same as C/C++.
+Spans microcontroller to supercomputer.
+{% end %}
+
 - handles high performance, and low resource
-  without needing to switch languages or ecosystems
+  without needing to switch languages
 - The naive, understandable approach
   is often _"good enough"_ by default
+
+Some companies inherently value the security memory safety provides.
+Others are more swayed by the productive, reliable, and efficient tagline.
+I think "memory-safe" undersells what Rust actually offers.
+
+Instead, I think we should strive to view Rust through the official tagline:
+
+**Rust empowers everyone to productively build reliable and efficient software**
 
 {% footnotes() %}
 
@@ -73,7 +96,7 @@ Efficient:
 
 {{ fn(id="tiobe", n="1") }} C and C++ together hold ~20% of language market share. Rust sits at ~1%. Source: [TIOBE Index](https://www.tiobe.com/tiobe-index/).
 
-## aside
+## Aside
 
 The NSA's ["Software Memory Safety"](https://media.defense.gov/2025/Jun/23/2003742198/-1/-1/0/CSI_MEMORY_SAFE_LANGUAGES_REDUCING_VULNERABILITIES_IN_MODERN_SOFTWARE_DEVELOPMENT.PDF) directive,
 is a pragmatic step,
@@ -81,13 +104,13 @@ and purposefully narrow in its scope.
 
 The NSA encourages new software development
 away from C and C++,
-and towards memory-safety languages.
+and towards memory-safe languages.
 
 That recommendation is correct.
 
 But framing Rust solely through this lens does it a disservice.
 
-The NSA acknowledged that,
+The NSA acknowledged,
 based on defect data from [Microsoft](https://www.microsoft.com/en-us/msrc/blog/2019/07/a-proactive-approach-to-more-secure-code), [Chromium](https://www.chromium.org/Home/chromium-security/memory-safety/), and [Android](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html),
 the argument _"careful C++ programmers can solve this"_
 is definitively false.
